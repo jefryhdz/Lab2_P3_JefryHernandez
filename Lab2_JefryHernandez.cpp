@@ -8,22 +8,23 @@ void conjetura();
 bool primo(int);
 
 int main(){
-	switch(menu()){
-	int a;
-	int b;
-		case 1:{a=primos();cout<<"La suma de todos los numeros primos e:"<<a<<endl;}	
-		case 2:{b= multiplos();cout<<"La suma de todos los numeros multiplos es:"<<b<<endl;}
-		case 3:{conjetura();}
-			
-			
-
-
+	int men =menu();
+	do{
+		switch(men){
+		int a;
+		int b;
+			case 1:{a=primos();cout<<"La suma de todos los numeros primos e:"<<a<<endl;}	
+			case 2:{b= multiplos();cout<<"La suma de todos los numeros multiplos es:"<<b<<endl;}
+			case 3:{conjetura();}
+		}
+	}while(men!=4);				
 	return 0;
-}}
+}
 int menu(){
 	int menu; cout<<"     Menú"<<endl; cout<<"1. Suma de primos"<<endl;
 	cout<<"2. Suma de los multiplos"<<endl;
 	cout<<"3. Conjetura Goldbach"<<endl;
+	cout<<"4. Salir"<<endl;
 	cin>>menu;
 	return menu;
 	
