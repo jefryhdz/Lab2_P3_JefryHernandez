@@ -8,8 +8,9 @@ void conjetura();
 bool primo(int);
 
 int main(){
-	int men =menu();
+	int men;
 	do{
+	men =menu();
 		switch(men){
 		int a;
 		int b;
@@ -17,6 +18,7 @@ int main(){
 			case 2:{b= multiplos();cout<<"La suma de todos los numeros multiplos es:"<<b<<endl;break;}
 			case 3:{conjetura();break;}
 			case 4: {break;}
+			break;
 		}
 	}while(men!=4);				
 	return 0;
