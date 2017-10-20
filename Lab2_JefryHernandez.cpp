@@ -8,7 +8,7 @@ void conjetura();
 bool primo(int);
 
 int main(){
-	int men;
+	int men;//men es abreviando menu
 	do{
 	men =menu();
 		switch(men){
