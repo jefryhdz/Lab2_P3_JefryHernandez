@@ -95,4 +95,4 @@ bool primo(int prim){
 		return false;
 	}
 
-}
+}//este metodo es para saber si un numero es primo
