@@ -5,6 +5,7 @@ int menu();
 int primos();
 int multiplos();
 bool conjetura();
+void primo(int);
 
 int main(){
 	switch(menu()){
@@ -62,7 +63,7 @@ int multiplos(){
 	}
 	return suma;
 }
-bool conjetura(){
+void conjetura(){
 	int numeroconjetura=0;
 	int veces=0;
 	int veces2=0;
@@ -71,26 +72,28 @@ bool conjetura(){
 	cout<<"Ingrese el numero para determinar la conjetura"<<endl;
 	cin>>numeroconjetura;
 	for(int i = 1;i<numeroconjetura;i++){
-		for(int j =1; j<i;j++){
-			if(i%j==0)
-				veces++;
-		}if(veces==0||veces==1){
-			primernumero = i;
-			for(int k =1;k<numeroconjetura;k++){
-				for(int l =1;l<k;l++){
-					if(k%l==0)
-						veces2++;
-				}if(veces2==0||veces2==1){
-					segundonumero=k;
-					if(primernumero+segundonumero==numeroconjetura)
-						cout<<"El primer numero es"<<primernumero<<endl;
-						cout<<"El segundo numero es"<<segundonumero<<endl;
-						return true;
+		if(primo(i)){
+			for(int j =1;j<numeroconjetura;j++){
+				if(primo(j)){
+					if(i+j==numeroconjetura){
+						cout<<i<<"+"<<j<<"="<<numeroconjetura<<endl;
 					}
-			
+				}
 			}
 		}
+
 	}
 
 }
+bool primo(int prim){
+	int veces = 0;
+	for(int i =0;i<prim;i++){
+		if(prim%i)
+			veces++;
+	}if(veces==0||veces==1){
+		return true;
+	}else{
+		return false;
+	}
 
+}
