@@ -13,9 +13,10 @@ int main(){
 		switch(men){
 		int a;
 		int b;
-			case 1:{a=primos();cout<<"La suma de todos los numeros primos e:"<<a<<endl;}	
-			case 2:{b= multiplos();cout<<"La suma de todos los numeros multiplos es:"<<b<<endl;}
-			case 3:{conjetura();}
+			case 1:{a=primos();cout<<"La suma de todos los numeros primos e:"<<a<<endl;break;}	
+			case 2:{b= multiplos();cout<<"La suma de todos los numeros multiplos es:"<<b<<endl;break;}
+			case 3:{conjetura();break;}
+			case 4: {break;}
 		}
 	}while(men!=4);				
 	return 0;
