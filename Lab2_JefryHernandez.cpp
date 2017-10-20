@@ -4,8 +4,8 @@ using namespace std;
 int menu();
 int primos();
 int multiplos();
-bool conjetura();
-void primo(int);
+void conjetura();
+bool primo(int);
 
 int main(){
 	switch(menu()){
@@ -65,20 +65,15 @@ int multiplos(){
 }
 void conjetura(){
 	int numeroconjetura=0;
-	int veces=0;
-	int veces2=0;
-	int primernumero=0;
-	int segundonumero =0;
 	cout<<"Ingrese el numero para determinar la conjetura"<<endl;
 	cin>>numeroconjetura;
 	for(int i = 1;i<numeroconjetura;i++){
 		if(primo(i)){
 			for(int j =1;j<numeroconjetura;j++){
 				if(primo(j)){
-					if(i+j==numeroconjetura){
+					if(i+j==numeroconjetura)
 						cout<<i<<"+"<<j<<"="<<numeroconjetura<<endl;
-					}
-				}
+				}				
 			}
 		}
 
@@ -87,8 +82,8 @@ void conjetura(){
 }
 bool primo(int prim){
 	int veces = 0;
-	for(int i =0;i<prim;i++){
-		if(prim%i)
+	for(int i =1;i<prim;i++){
+		if(prim%i==0)
 			veces++;
 	}if(veces==0||veces==1){
 		return true;
