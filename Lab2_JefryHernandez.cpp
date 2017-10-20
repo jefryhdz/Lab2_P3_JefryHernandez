@@ -4,13 +4,15 @@ using namespace std;
 int menu();
 int primos();
 int multiplos();
+bool conjetura();
 
 int main(){
 	switch(menu()){
 	int a;
 	int b;
-		case 1:{a=primos();cout<<"La suma de todos los numeros primos e:"<<a<<endl;}
+		case 1:{a=primos();cout<<"La suma de todos los numeros primos e:"<<a<<endl;}	
 		case 2:{b= multiplos();cout<<"La suma de todos los numeros multiplos es:"<<b<<endl;}
+		case 3:{conjetura();}
 			
 			
 
@@ -59,5 +61,36 @@ int multiplos(){
 		}			
 	}
 	return suma;
+}
+bool conjetura(){
+	int numeroconjetura=0;
+	int veces=0;
+	int veces2=0;
+	int primernumero=0;
+	int segundonumero =0;
+	cout<<"Ingrese el numero para determinar la conjetura"<<endl;
+	cin>>numeroconjetura;
+	for(int i = 1;i<numeroconjetura;i++){
+		for(int j =1; j<i;j++){
+			if(i%j==0)
+				veces++;
+		}if(veces==0||veces==1){
+			primernumero = i;
+			for(int k =1;k<numeroconjetura;k++){
+				for(int l =1;l<k;l++){
+					if(k%l==0)
+						veces2++;
+				}if(veces2==0||veces2==1){
+					segundonumero=k;
+					if(primernumero+segundonumero==numeroconjetura)
+						cout<<"El primer numero es"<<primernumero<<endl;
+						cout<<"El segundo numero es"<<segundonumero<<endl;
+						return true;
+					}
+			
+			}
+		}
+	}
+
 }
 
